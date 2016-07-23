@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>pagePiling.js plugin - Backgrounds</title>
+
+	<link rel="stylesheet" type="text/css" href="jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+
+	<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="jquery.pagepiling.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+	    	$('#pagepilings').pagepiling({
+	    		menu: '#menu',
+			direction: 'horizontal',
+			verticalCentered: 'true',
+			sectionsColor: ['#111','#111','#111','#111'],
+	    		anchors: ['请看地址栏', 'urlhash', 'this is page3','this is page4'],
+			scrollingSpeed: 700,
+			easing: 'linear',						//动画效果被css文件中的.pp-easing所覆盖，动画时间也可在该处调整
+			loopBottom: true,
+			loopTop: true,
+			css3: true,
+	    		navigation: {
+		            'textColor': '#f2f2f2',
+		            'bulletsColor': '#ccc',
+		            'position': 'right',
+		            'tooltips': ['鼠标光标移至右侧小圆点上将显示Page 1', '鼠标光标移至右侧小圆点上将显示Page 2', '鼠标光标移至右侧小圆点上将显示Page 3', '鼠标光标移至右侧小圆点上将显示Page 4']
+		        },
+		       	normalScrollElements: '#section4, .txt',
+		        normalScrollElementTouchThreshold: 5,
+			touchSensitivity: 5,
+			keyboardScrolling: false,					//禁用键盘翻页了
+			sectionSelector: '.section',
+			animateAnchor: true,
+			//回调函数的使用示例
+			afterRender: function(){
+				alert('页面初始化时载入的回调函数：正在载入');
+			},
+			onLeave: function(index, nextIndex, direction){
+				if(direction == 'down') {
+					directionTxt = '下';
+				} else {
+					directionTxt = '上';
+				}
+				alert('离开当前页面向' + directionTxt +'滚动载入回调函数：即将离开第' + index + '屏去往第' + nextIndex +'屏');
+			},
+			afterLoad: function(anchorLink, index){
+				alert('页面载入完成时载入的回调函数显示：滚动到了第' + index + '屏');
+			}
+
+			});
+	    });
+    </script>
+
+    <style>
+    /* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	#section1,
+	#section2,
+	#section3,
+	#section4{
+		background-size: cover;
+	}
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(imgs/bg1.jpg);
+	}
+	#section2{
+		background-image: url(imgs/bg2.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3{
+		background-image: url(imgs/bg3.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3 h1{
+		color: #000;
+	}
+
+
+
+	#section1 h1{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 30px;
+		color: #fff;
+	}
+
+	#section2 .intro{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 30px;
+	}
+	#section2 h1,
+	#section2 p{
+		text-shadow: 1px 5px 20px #000;
+	}
+
+	#section3 h1,
+	#section3 p{
+		text-shadow: 1px 5px 20px #000;
+		color: #fff;
+	}
+
+	#section4 .txt{
+		margin: 0 auto;
+		font-size: 3em;
+		width: 900px;
+		height: 400px;
+		overflow: auto;
+	}
+
+	#infoMenu li a{
+		color: #fff;
+	}
+    </style>
+
+</head>
+<body>
+
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#请看地址栏">Page 1</a></li>
+		<li data-menuanchor="page2"><a href="#urlhash">Page 2</a></li>
+		<li data-menuanchor="page3"><a href="#this is page3">Page 3</a></li>
+		<li date-menuanchor="page4"><a href="#this is page4">Page 4</a></li>
+	</ul>
+
+	<div id="pagepilings">
+	    <div class="section" id="section1">
+	    	<h1>pagePiling.js</h1>
+	    </div>
+	    <div class="section" id="section2">
+	    	<div class="intro">
+	    		<h1>Backgrounds </h1>
+	    		<p>Show it in full screen!</p>
+	    	</div>
+	    </div>
+	    <div class="section" id="section3">
+	    	<div class="intro">
+	    		<h1>Just terrific!</h1>
+	    		<p>Use the power of images</p>
+	    	</div>
+	    </div>
+	    <div class="section" id="section4">
+		<div class="txt">
+			<p>rolling test mode</p></br></br><p>rolling down</p></br>
+			<p>*</p>
+			<p>**</p>
+			<p>***</p>
+			<p>****</p>
+			<p>*****</p>
+			<p>******</p>
+			<p>*******</p>
+			<p>********</p>
+			<p>*********</p>
+			<p>**********</p>
+			<p>***********</p>
+			<p>************</p>
+			<p>*************</p>
+			<p>************</p>
+			<p>**********</p>
+			<p>*********</p>
+			<p>********</p>
+			<p>*******</p>
+			<p>******</p>
+			<p>*****</p>
+			<p>****</p>
+			<p>***</p>
+			<p>**</p>
+			<p>*</p>
+		</div>
+	    </div>
+	</div>
+
+</body>
+</html>

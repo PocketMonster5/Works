@@ -1,0 +1,12 @@
+CSS3 animation-timing-function 属性（动画效果） http://www.w3school.com.cn/cssref/pr_animation-timing-function.asp
+CSS3 transition-timing-function 属性（过渡效果） http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp
+实用的 CSS — 贝塞尔曲线(cubic-bezier) http://www.jianshu.com/p/d999f090d333
+cubic-bezier效果预览 http://yisibl.github.io/cubic-bezier
+bezier曲线原理 http://blog.csdn.net/joogle/article/details/7975118
+
+根据以上资料，css中cubic-bezier的形式应该是这样的：这是一条3次曲线，过定点(0,0),(1,1),确定了动画中的s-t关系，其参数方程(x,y)满足
+(x,y) = (1-t)^3 * (0,0) +
+	3(1-t)^2 * t * (x1,y1) +
+	3(1-t) * t^2 * (x2,y2) +
+	t^3 * (1,1)
+这条曲线的性质：在(0,0),(1,1)处的切线斜率分别为y1/x1,(1-y2)/(1-x2)，与选择的点构成的线段相切
