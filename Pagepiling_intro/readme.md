@@ -1,4 +1,4 @@
-﻿使用方法.md 介绍了基本的使用方法
+- 使用方法.md 介绍了基本的使用方法
 example.html 是一个具体的例子
 jquery.pagepiling_noted.js 是加过注释的javascript文件，在里面可以找到各功能对应的代码，不过因为水平有限，没有能够整体化地介绍各个函数的综合作用；加注释的时候可能不小心删了某行代码，所以这个文件不能直接拿来用了:(
 用的时候请使用jquery.pagepiling.min.js, jquery.pagepiling.css.
