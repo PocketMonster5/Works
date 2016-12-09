@@ -1,3 +1,3 @@
 # Works
-To store basic work.
-Also used for tests.
+- To store basic work.
+- Also used for tests.
